@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --lighting-color: #0089b7;
+  --dark-color: #003d62;
+  --darker-color: #003251;
+  --secondary-color: #fff700;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+  color: white;
+}
+body {
+  font-size: 1.4rem;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+header{
+    background: var(--lighting-color);
+   
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+ul{
+    list-style: none;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+nav ul{
+    gap: 1rem;
+    display: flex;
+}
+.logo{
+    font-size: 2rem;
+    font-weight: 800; 
+}
+nav li{
+    font-size: 1.8rem;
+    border: transparent;
+    transition: 0.3s ease-in-out;
+}
+nav li:hover{
+    border-radius: 15%;
+    border: 2px solid #ccc;
+    transition: 0.3s ease-in-out;
+}
+#hero{
+    background: var(--dark-color);
+    padding: 4rem 0;
+    border-bottom: 2px solid var(--lighting-color);
+}
+#hero .container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero-content{
+  display: grid;
+  place-items: center;
+ 
+}
+#hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.hi-text{
+  font-size: 5rem;
+  color: var(--secondary-color);
+}
+.name-text {
+  font-size: 5rem;
+
+}
+#hero h2{
+  font-size: 4rem;
+  font-weight: bold;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */ /* Adjust as needed */
+  animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing{
+  from{
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret{
+  from,to{
+    border-color: transparent;
+  }
+  50%{
+    border-color: orange;
+  }
+}
+ #project h1{
+  font-size: 6rem;
+  text-align: center;
+  margin-bottom: 30px;
+ }
+ .project-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit , minmax(320px,1fr));
+  gap: 2rem;
+ }
+ .grid-item{
+  display: grid;
+  place-items: center;
+ }
+ .card{
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+ }
+ .card:hover{
+  transform: scale(1.05);
+  transition: 1s ease-in-out;
+ }
+ .card:hover img{
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+  opacity: 0.8;
+ }
+ .card:hover .card-content{
+  
+  background-color: white;
+  color: black;
+  transform: translateY(0px);
+ }
+ .card-content{
+  text-align: center;
+  width: 100%;
+  padding-top: 2%;
+  font-size: 2.5rem;
+  z-index: 1;
+  height: 45px;
+  transition: 0.5s ease-in-out;
+  transform: translateY(100px);
+ }
+#project{
+  background: var(--darker-color);
+  padding: 7% 0;
+}
+
+#contact{
+  background: #003251;
+}
+#contact h2{
+  font-size: 6rem;
+  text-align: center;
+}
+#contact .container{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+}
+.top_contact{
+  display: grid;
+ grid-template-columns: repeat(auto-fit,minmax(80px, 1fr)); 
+ margin: 0 auto;
+ width: 50%;
+}
+.contact_way{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+ .contact_way i{ 
+  font-size: 2.4rem;
+} 
+.contact_way h3{
+  font-size: 3rem;
+  font-weight: bold;
+}
+.bottom_contact{
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit,minmax(80px, 1fr)); 
+  margin: 0 auto;
+  width: 25%;
+  margin-bottom: 45px;
+}
+footer{
+  padding: 2%;
+  font-size: 2rem;
+  background: var(--dark-color);
+  text-align: center;
+}
+
+@media (max-width: 786px) {
+  html{
+    font-size: 40%;
+  }
+  #hero .container{
+    flex-direction: column;
+  }
+  #hero img{
+    display: grid;
+    place-items: center;
+  }
+}
+@media (max-width:600px){
+  html{
+    height: 100%;
+    width: 100%;
+  }
+  #hero .container{
+    flex-direction: column;
+  }
+  #hero img{
+    display: grid;
+    place-items: center;
+  }
+  .top_contact{
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+  }
+  .bottom_contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media(max-width:500px){
+  html{
+    font-size: 32%;
+  }
+  #hero .container{
+    flex-direction: column;
+  }
+  #hero img{
+    display: grid;
+    place-items: center;
+  }
+  .top_contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .bottom_contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width:345px){
+  html{
+    height: 100%;
+    width: 100%;
+    display: grid;
+  }
+  .top_contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .bottom_contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
